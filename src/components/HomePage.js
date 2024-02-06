@@ -4,11 +4,13 @@ import './HomePage.css';
 import './../App.css'
 import { Link } from 'react-router-dom';
 import CountdownTimer from './CountdownTimer';
+import SocialLinks from './SocialLinks';
 
 
 const HomePage = () => {
   return (
     <div>
+        <SocialLinks/>
        <header className="App-header">
       <h2>Welcome to the Super Degen Bowl 2024</h2>
       <p>Yo, Degens! 🎩✨ Ready to flip the script on traditional fandom? Welcome to the only showdown where diamond hands and NFT flips bring you closer to the end zone than ever before. Forget Vegas odds and dusty collectibles; we’re here to redefine the game – web3 style.</p>
@@ -18,9 +20,8 @@ const HomePage = () => {
       <p>Score Big: If your squad takes home the Lombardi, so could you. We're not just tossing around rewards; we're making it rain with a purpose.</p>
       <p>Payout Pool Party: Fueled by minting magic and secondary sales' sizzle, our reward pool is here to redistribute the wealth, degen-style. First 400 eligible wallets get to take a victory lap – in ETH.</p>
       <Link to="/mint"><button>Mint Your NFT</button></Link>
-      <CountdownTimer />
-
       <Link to="/whitepaper"><button> read more you mint</button></Link>
+      <CountdownTimer />
     </header>
     </div>
   );

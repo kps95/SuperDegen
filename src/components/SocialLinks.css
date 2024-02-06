@@ -1,0 +1,15 @@
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the space between icons */
+  }
+  
+  .social-links a {
+    color: #000; /* Icon color */
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  
