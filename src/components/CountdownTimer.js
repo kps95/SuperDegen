@@ -1,9 +1,10 @@
-// src/components/CountdownTimer.js
 import React, { useState, useEffect } from 'react';
 
 const CountdownTimer = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date('02/11/2024') - +new Date();
+    // Super Bowl 2024 kickoff at 6:30 PM Eastern Time, February 11, 2024
+    // Adjust the '2024-02-11T18:30:00-05:00' format to your specific time zone if necessary
+    const difference = +new Date('2024-02-11T18:30:00-05:00') - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -21,27 +22,18 @@ const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
+    // Update the countdown every second
     const timer = setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
-    // Clear timeout if the component is unmounted
+    // Cleanup the interval on component unmount
     return () => clearTimeout(timer);
   });
 
-  const timerComponents = [];
-
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
-
-    timerComponents.push(
-      <span key={interval}>
-        {timeLeft[interval]} {interval}{" "}
-      </span>
-    );
-  });
+  const timerComponents = Object.keys(timeLeft).map((interval) => (
+    timeLeft[interval] ? <span key={interval}>{timeLeft[interval]} {interval}{" "}</span> : null
+  ));
 
   return (
     <div>
