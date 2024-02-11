@@ -65,11 +65,11 @@ const MintPage = () => {
         <div className="mintOptions">
           <div className="mintBox kcBox">
             <h2>KC</h2>
-            <button onClick={() => mintNFT('KC')}>Mint KC NFT</button>
+            <button >Mint KC NFT</button>
           </div>
           <div className="mintBox sfBox">
             <h2>SF</h2>
-            <button onClick={() => mintNFT('SF')}>Mint SF NFT</button>
+            <button >Mint SF NFT</button>
           </div>
         </div>
       </div>
